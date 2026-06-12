@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Budget Show</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent: #10b981;
+            --accent-dim: rgba(16, 185, 129, 0.1);
+            --border: #334155;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            margin: 0;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 750px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--border);
+        }
+
+        header {
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 24px;
+            margin-bottom: 32px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: var(--accent-dim);
+            color: var(--accent);
+            padding: 4px 12px;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 12px;
+        }
+
+        h1 {
+            font-size: 2.25rem;
+            margin: 0 0 8px 0;
+            font-weight: 700;
+            letter-spacing: -0.025em;
+        }
+
+        .last-updated {
+            color: var(--text-muted);
+            font-size: 0.875rem;
+            margin: 0;
+        }
+
+        section {
+            margin-bottom: 32px;
+        }
+
+        h2 {
+            font-size: 1.25rem;
+            color: var(--text-main);
+            margin-top: 0;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            font-weight: 600;
+        }
+
+        h2::before {
+            content: "";
+            display: inline-block;
+            width: 4px;
+            height: 18px;
+            background-color: var(--accent);
+            margin-right: 10px;
+            border-radius: 2px;
+        }
+
+        p, li {
+            color: var(--text-muted);
+            font-size: 1rem;
+            margin-top: 0;
+            margin-bottom: 16px;
+        }
+
+        p strong {
+            color: var(--text-main);
+        }
+
+        ul {
+            margin-top: 0;
+            margin-bottom: 16px;
+            padding-left: 24px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        footer {
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+            padding-top: 24px;
+            text-align: center;
+            font-size: 0.875rem;
+            color: var(--text-muted);
+        }
+
+        .contact-box {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px dashed var(--border);
+            padding: 16px;
+            border-radius: 8px;
+            margin-top: 16px;
+        }
+
+        @media (max-width: 640px) {
+            body {
+                padding: 20px 12px;
+            }
+            .container {
+                padding: 24px 16px;
+            }
+            h1 {
+                font-size: 1.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <span class="badge">Pure App Extension Compliance</span>
+        <h1>Privacy Policy</h1>
+        <p class="last-updated"><strong>App Name:</strong> Budget Show &bull; <strong>Last updated:</strong> June 2026</p>
+    </header>
+
+    <main>
+        <section>
+            <p>This Privacy Policy describes how <strong>Budget Show</strong> ("the App") handles information when you install or use the App in connection with your Shopify-supported store. Because this application is engineered explicitly to safeguard merchant and customer privacy, it operates under a strict zero-data collection framework.</p>
+        </section>
+
+        <section>
+            <h2>1. Data Collection Framework</h2>
+            <p>The App operates completely as a client-side <strong>Theme App Extension</strong>. We do not collect, store, harvest, process, or transmit any personal data, customer records, identities, tracking cookies, or merchant credentials to external databases or third-party servers.</p>
+            <p>All runtime features, including disposable income formulas, safe spend calculations, product catalog filtering arrays, and live shopping cart guardrail calculations, are executed directly in the user's local web browser engine session.</p>
+        </section>
+
+        <section>
+            <h2>2. How We Access and Use Information</h2>
+            <p>To deliver real-time user experiences, the client-side script parses local storefront attributes:</p>
+            <ul>
+                <li><strong>Shopify Cart AJAX Endpoint:</strong> The App pings your store's native local URL secure path <code>/cart.js</code> to dynamically fetch the active session's cumulative total to compute budget thresholds.</li>
+                <li><strong>Storefront Catalog Attributes:</strong> The App references exposed HTML dataset prices on product cards to automatically configure conditional visibility rules based on the consumer's self-reported limits.</li>
+            </ul>
+            <p>This state evaluation happens on-the-fly and vanishes completely the moment the browser tab or session window is terminated.</p>
+        </section>
+
+        <section>
+            <h2>3. Third-Party Services & Infrastructure</h2>
+            <p>Because the app contains no remote cloud API endpoints, databases, tracking pixels, or telemetry systems, no information is shared with or sold to advertising systems, analytical brokers, or secondary technical platforms.</p>
+        </section>
+
+        <section>
+            <h2>4. Data Retention and Deletion</h2>
+            <p>We retain zero bits of data. Consequently, when a merchant removes the App from their Shopify system drawer, no lingering codebase artifacts or configuration fields remain stored anywhere, ensuring instantaneous compliance with deletion standards.</p>
+        </section>
+
+        <section>
+            <h2>5. Changes to This Privacy Policy</h2>
+            <p>We may update this privacy policy from time to time in order to reflect changes to our operational workflows or for structural legal and regulatory compliance updates. Any amendments will be pushed transparently to this repository file path.</p>
+        </section>
+
+        <section>
+            <h2>6. Contact & Support Verification</h2>
+            <p>If you have questions regarding this architecture or need technical clarification, please reach out directly via your support channel or drop an electronic message line:</p>
+            <div class="contact-box">
+                <p style="margin: 0;"><strong>Developer Support Email:</strong> <span style="color: var(--accent);">[YOUR_EMAIL_ADDRESS]</span></p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p style="margin: 0; font-size: 0.75rem;">&copy; 2026 Budget Show- 2-KO. Built to Shopify Online Store 2.0 Architectural Specifications.</p>
+    </footer>
+</div>
+
+</body>
+</html>
