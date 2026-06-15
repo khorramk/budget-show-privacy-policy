@@ -2,127 +2,26 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Budget Show - Onboarding Dashboard</title>
-    <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: #f6f6f7;
-            color: #202223;
-            margin: 0;
-            padding: 40px 20px;
-        }
-        .container {
-            max-width: 600px;
-            background: #ffffff;
-            margin: 0 auto;
-            padding: 32px;
-            border-radius: 8px;
-            box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
-        }
-        .logo-area {
-            text-align: center;
-            margin-bottom: 24px;
-        }
-        .badge {
-            background-color: #e3f1df;
-            color: #008060;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 14px;
-            font-weight: 600;
-            display: inline-block;
-        }
-        h1 {
-            font-size: 24px;
-            margin: 12px 0;
-            font-weight: 600;
-        }
-        p {
-            color: #6d7175;
-            line-height: 1.5;
-        }
-        .steps {
-            background: #f1f2f4;
-            padding: 20px;
-            border-radius: 6px;
-            margin: 24px 0;
-        }
-        .step-item {
-            margin-bottom: 16px;
-            display: flex;
-            align-items: flex-start;
-        }
-        .step-number {
-            background: #008060;
-            color: white;
-            border-radius: 50%;
-            width: 24px;
-            height: 24px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            margin-right: 12px;
-            flex-shrink: 0;
-            font-size: 14px;
-        }
-        .btn-primary {
-            background-color: #008060;
-            color: white;
-            border: none;
-            padding: 12px 24px;
-            font-size: 16px;
-            font-weight: 600;
-            border-radius: 4px;
-            cursor: pointer;
-            width: 100%;
-            text-decoration: none;
-            display: inline-block;
-            text-align: center;
-            box-sizing: border-box;
-        }
-        .btn-primary:hover {
-            background-color: #006e52;
-        }
-    </style>
+    <title>Budget Show Redirecting...</title>
 </head>
 <body>
+    <p>Redirecting you safely to your Theme Customizer Studio...</p>
 
-<div class="container">
-    <div class="logo-area">
-        <span class="badge">Online Store 2.0 Native</span>
-        <h1>💰 Budget Show Installation Hub</h1>
-    </div>
-    
-    <p>Welcome to Budget Show! Your app has been successfully synchronized and activated on your core store profile. Because this app is built as a blazing-fast theme extension, there is no bulky background database server config needed.</p>
-    
-    <div class="steps">
-        <h3>How to display the widget on your site:</h3>
-        <div class="step-item">
-            <div class="step-number">1</div>
-            <div><strong>Open Theme Editor:</strong> Click the configuration activation button below to jump straight to your visual storefront designer customization studio canvas layout.</div>
-        </div>
-        <div class="step-item">
-            <div class="step-number">2</div>
-            <div><strong>Inject App Block:</strong> Select a template page layout (like Product Details, Home, or Cart Pages) in the top dropdown selection layout node window panel, then click <strong>"Add Block / Section" → "Apps" Tab</strong> and choose <strong>"Budget Show"</strong>.</div>
-        </div>
-        <div class="step-item">
-            <div class="step-number">3</div>
-            <div><strong>Customize & Save:</strong> Use the right sidebar fields inside the theme visual customizer to modify threshold rules, border margins, background colors, and styling parameters instantly. Click Save!</div>
-        </div>
-    </div>
+    <script>
+        // 1. Grab the merchant's shop domain parameters from Shopify's incoming request
+        const urlParams = new URLSearchParams(window.location.search);
+        const shop = urlParams.get('shop') || urlParams.get('merchant');
 
-    <a href="#" id="customizer-link" class="btn-primary" target="_top">Launch Visual Theme Customizer Studio</a>
-</div>
-
-<script>
-    // Dynamically build the return URL redirection path string mappings natively
-    const urlParams = new URLSearchParams(window.location.search);
-    const shop = urlParams.get('shop') || urlParams.get('merchant') || 'myshopify.com';
-    const customizerUrl = `https://${shop}/admin/themes/current/editor`;
-    document.getElementById('customizer-link').href = customizerUrl;
-</script>
-
+        if (shop) {
+            // 2. Build the exact destination path to their theme customization panel
+            const customizerUrl = `https://${shop}/admin/themes/current/editor`;
+            
+            // 3. Break out of the iframe secure sandbox and redirect the parent window
+            window.top.location.href = customizerUrl;
+        } else {
+            // Fallback just in case no parameters are present
+            document.body.innerHTML = "<h3>Configuration error: Please launch this app directly from your Shopify Admin Apps menu.</h3>";
+        }
+    </script>
 </body>
 </html>
