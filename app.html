@@ -4,28 +4,24 @@
     <meta charset="UTF-8">
     <title>Budget Show Secure Redirect...</title>
     
-    <!-- 1. Load the official Shopify App Bridge script directly from their secure CDN -->
     <script src="https://cdn.shopify.com/shopifycloud/app-bridge.js"></script>
     
     <script>
-        // 2. Parse the mandatory authentication parameters provided by Shopify's frame link
+        // Parse the incoming shop credentials safely
         const urlParams = new URLSearchParams(window.location.search);
         const shop = urlParams.get('shop') || urlParams.get('merchant');
-        const host = urlParams.get('host');
 
         if (shop) {
-            // 3. Initialize the Shopify configuration engine instance natively
-            shopify.config({
-                apiKey: "f9db9653dba449e5bcf0342688e8905d", // Replace this with your actual Client ID / API Key from your shopify.app.toml
-                host: host,
-                forceRedirect: true
-            });
-
-            // 4. Build the targeted destination path to the theme customization canvas
+            // Build the absolute redirection destination target
             const customizerUrl = `https://${shop}/admin/themes/current/editor`;
             
-            // 5. Execute the redirect. App Bridge will securely handle this call, bypassing Chrome's sandbox block!
-            window.top.location.href = customizerUrl;
+            // Check if App Bridge's utility API exists to execute a secure frame breakout
+            if (window.shopify && typeof window.shopify.navigateTo === 'function') {
+                shopify.navigateTo(customizerUrl, { target: '_top' });
+            } else {
+                // Secure fallback if App Bridge takes an extra millisecond to map into memory
+                window.top.location.href = customizerUrl;
+            }
         } else {
             document.body.innerHTML = "<h3 style='font-family:sans-serif; text-align:center; margin-top:50px;'>Configuration error: Please launch this app directly from your Shopify Admin Apps menu.</h3>";
         }
